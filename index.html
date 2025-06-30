@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Randi X Panel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="splash-screen" id="splash">Loading Randi X Panel...</div>
+  <div id="app" class="hidden">
+    <header><h1>🛒 Randi X Panel</h1></header>
+    <main>
+      <section id="produk">
+        <h2>📦 Produk Panel</h2>
+        <div class="produk-item">🔥 Bot WhatsApp Premium <button onclick="beli('Bot WhatsApp Premium')">Beli</button></div>
+      </section>
+      <section id="komentar">
+        <h2>💬 Komentar</h2>
+        <div id="daftar-komentar"></div>
+        <textarea id="komentarInput" placeholder="Tulis komentar..."></textarea>
+        <button onclick="kirimKomentar()">Kirim</button>
+      </section>
+      <section id="loginAdmin" class="hidden">
+        <input type="text" id="username" placeholder="Username" />
+        <input type="password" id="password" placeholder="Password" />
+        <button onclick="login()">Masuk Admin</button>
+      </section>
+      <section id="balasanAdmin" class="hidden">
+        <h3>Balas Komentar</h3>
+        <textarea id="balasanInput" placeholder="Tulis balasan..."></textarea>
+        <button onclick="balasKomentar()">Balas</button>
+        <button onclick="logout()">Logout Admin</button>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
