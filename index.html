@@ -3,36 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <title>Randi X Panel</title>
+  <title>Randi X Panel Shopee Style</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="splash-screen" id="splash">Loading Randi X Panel...</div>
+  <div id="splash">🔄 Memuat Aplikasi...</div>
   <div id="app" class="hidden">
-    <header><h1>🛒 Randi X Panel</h1></header>
-    <main>
-      <section id="produk">
-        <h2>📦 Produk Panel</h2>
-        <div class="produk-item">🔥 Bot WhatsApp Premium <button onclick="beli('Bot WhatsApp Premium')">Beli</button></div>
-      </section>
-      <section id="komentar">
-        <h2>💬 Komentar</h2>
-        <div id="daftar-komentar"></div>
-        <textarea id="komentarInput" placeholder="Tulis komentar..."></textarea>
-        <button onclick="kirimKomentar()">Kirim</button>
-      </section>
-      <section id="loginAdmin" class="hidden">
+    <header><h1>🛍️ Randi X Panel</h1></header>
+    <nav class="nav-buttons">
+      <button onclick="tampilkan('produk')">🏠 Beranda</button>
+      <button onclick="tampilkan('kategori')">📂 Kategori</button>
+      <button onclick="tampilkan('komentar')">💬 Komentar</button>
+      <button onclick="tampilkan('admin')">🔐 Admin</button>
+    </nav>
+
+    <section id="produk" class="section">
+      <h2>🔥 Produk Unggulan</h2>
+      <div class="produk-item">🌟 Panel WhatsApp <button onclick="beli('Panel WhatsApp')">Beli</button></div>
+      <div class="produk-item">🚀 Panel Telegram <button onclick="beli('Panel Telegram')">Beli</button></div>
+    </section>
+
+    <section id="kategori" class="section hidden">
+      <h2>📁 Kategori</h2>
+      <ul>
+        <li>📦 Semua Produk</li>
+        <li>📱 Bot WhatsApp</li>
+        <li>🎮 Bot Game</li>
+      </ul>
+    </section>
+
+    <section id="komentar" class="section hidden">
+      <h2>💬 Komentar</h2>
+      <div id="daftar-komentar"></div>
+      <textarea id="komentarInput" placeholder="Tulis komentar..."></textarea>
+      <button onclick="kirimKomentar()">Kirim</button>
+    </section>
+
+    <section id="admin" class="section hidden">
+      <div id="loginAdmin">
         <input type="text" id="username" placeholder="Username" />
         <input type="password" id="password" placeholder="Password" />
-        <button onclick="login()">Masuk Admin</button>
-      </section>
-      <section id="balasanAdmin" class="hidden">
-        <h3>Balas Komentar</h3>
-        <textarea id="balasanInput" placeholder="Tulis balasan..."></textarea>
+        <button onclick="login()">Login Admin</button>
+      </div>
+      <div id="panelAdmin" class="hidden">
+        <h3>🛠️ Panel Admin</h3>
+        <textarea id="balasanInput" placeholder="Balas komentar..."></textarea>
         <button onclick="balasKomentar()">Balas</button>
-        <button onclick="logout()">Logout Admin</button>
-      </section>
-    </main>
+        <button onclick="logout()">Logout</button>
+      </div>
+    </section>
   </div>
   <script src="script.js"></script>
 </body>
