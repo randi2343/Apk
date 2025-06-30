@@ -3,13 +3,16 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     document.getElementById("splash").style.display = "none";
     document.getElementById("app").classList.remove("hidden");
-  }, 2000);
+  }, 1500);
 });
 
-let isAdmin = false;
+function tampilkan(id) {
+  document.querySelectorAll(".section").forEach(sec => sec.classList.add("hidden"));
+  document.getElementById(id).classList.remove("hidden");
+}
 
 function beli(produk) {
-  const url = `https://wa.me/6281234567890?text=Halo, saya ingin beli ${produk}`;
+  const url = `https://wa.me/6281234567890?text=Halo, saya tertarik beli ${produk}`;
   window.open(url, "_blank");
 }
 
@@ -27,13 +30,18 @@ function login() {
   const user = document.getElementById("username").value;
   const pass = document.getElementById("password").value;
   if (user === "Randi" && pass === "123456") {
-    isAdmin = true;
-    document.getElementById("balasanAdmin").classList.remove("hidden");
     document.getElementById("loginAdmin").classList.add("hidden");
-    alert("Login berhasil sebagai Admin");
+    document.getElementById("panelAdmin").classList.remove("hidden");
+    alert("Berhasil login sebagai admin");
   } else {
-    alert("Username atau Password salah!");
+    alert("Username atau password salah!");
   }
+}
+
+function logout() {
+  document.getElementById("panelAdmin").classList.add("hidden");
+  document.getElementById("loginAdmin").classList.remove("hidden");
+  alert("Logout berhasil");
 }
 
 function balasKomentar() {
@@ -44,11 +52,4 @@ function balasKomentar() {
     document.getElementById("daftar-komentar").appendChild(div);
     document.getElementById("balasanInput").value = "";
   }
-}
-
-function logout() {
-  isAdmin = false;
-  document.getElementById("balasanAdmin").classList.add("hidden");
-  document.getElementById("loginAdmin").classList.remove("hidden");
-  alert("Logout berhasil");
 }
